@@ -1,7 +1,7 @@
 
-1 [] install create-react-app
+1 [x] install create-react-app
   
-2 [] Add additional dependencies
+2 [x] Add additional dependencies
   - styled components
 
 --------------------------------------------------------- pom
