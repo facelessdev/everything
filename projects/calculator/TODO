@@ -1,0 +1,35 @@
+
+1 [] install create-react-app
+  
+2 [] Add additional dependencies
+  - styled components
+
+--------------------------------------------------------- pom
+
+3 [] components skeleton
+  - App
+    - calculation hoc (higher order component, this will contain the state)
+    - calculation display
+    - realtime display
+    - keypad
+      - button
+
+--------------------------------------------------------- pom
+
+4 [] component layout
+  - research
+  - simple html/css implementation in codepen
+  - implement with components
+
+--------------------------------------------------------- pom
+
+5 [] add an integration test (will just be an example of how now 100% code cov)
+  - it should be able to [add/subtract/multiply/divide]
+    - example 
+      - press [5, 0, 0] 
+      - press /
+      - press 2
+      - inspect result div and result return 250
+
+--------------------------------------------------------- done 
+  
