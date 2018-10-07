@@ -1,19 +1,22 @@
+import React, { Fragment } from 'react';
+import CalculationContainer from './CalculationContainer';
+import CalculationDisplay from './CalculationDisplay';
+import ResultDisplay from './ResultDisplay';
+import Button from './Button';
 
-// bumb compnents
-  // organise the arrangement of components.
-  // <CalculationDisplay calculation/>
-  // <ResultDisplay result/>
-  // <Button onClick={handler}>0</Button>
-  // <Button onClick={handler}>1</Button>
-  // <Button onClick={handler}>2</Button>
-  // <Button onClick={handler}>3</Button>
-  // <Button onClick={handler}>4</Button>
-  // <Button onClick={handler}>5</Button>
-  // <Button onClick={handler}>6</Button>
-  // <Button onClick={handler}>7</Button>
-  // <Button onClick={handler}>8</Button>
-  // <Button onClick={handler}>9</Button>
-  // <Button onClick={handler}>+</Button>
-  // <Button onClick={handler}>-</Button>
-  // <Button onClick={handler}>/</Button>
-  // <Button onClick={handler}>*</Button>
+const ButtonArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-', '/', '*'];
+
+const Calculator = ({result, calculation, append, clear}) => (
+  <Fragment>
+    <CalculationDisplay>{calculation}</CalculationDisplay>
+    <ResultDisplay>{result}</ResultDisplay>
+    {
+      ButtonArray.map(value => (
+        <Button key={`key-${value}`} onClick={() => append(String(value))}>{value}</Button>
+      ))
+    }
+    <Button onClick={clear}>Clear</Button>
+  </Fragment>
+);
+
+export default CalculationContainer(Calculator);

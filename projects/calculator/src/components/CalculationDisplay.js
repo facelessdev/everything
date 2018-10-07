@@ -1,2 +1,6 @@
+import styled from 'styled-components';
 
-// bumb components which render text
+const CalculationDisplay = styled.span`
+`;
+
+export default CalculationDisplay;

@@ -1,1 +1,6 @@
-// bumb components which render text
+import styled from 'styled-components';
+
+const ResultDisplay = styled.span`
+`;
+
+export default ResultDisplay;

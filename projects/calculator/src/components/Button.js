@@ -1,10 +1,10 @@
+import styled from 'styled-components';
 
-// bumb compnent
-  // onclick handler
-  // value (0, 9) [-, +, /, *]
+const Button = styled.button`
+  background: palevioletred;
+  border: none;
+  color: white;
+  font-size: 2em;
+`;
 
-<Button onClick={handler}>9</Button>
-
-handler = (e, value) => {
-  
-}
+export default Button;

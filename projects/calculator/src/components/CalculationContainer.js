@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const CalculationHOC = (WrappedComponent) => {
+const CalculationContainer = (WrappedComponent) => {
 
   const INTIAL_CALCULATION_STATE = '';
   const INTIAL_RESULT_STATE = '';
@@ -15,11 +15,13 @@ const CalculationHOC = (WrappedComponent) => {
       }
     }
 
-    appendCalculation = (e, value) => {
+    appendCalculation = (value) => {
+      const newCalculation = this.state.calculation + value;
+      debugger;
       this.setState({
-        calculation: this.state.calculation + value,
+        calculation: newCalculation,
+        result: eval(newCalculation)
       });
-      this.evaluate();
     }
 
     clearCalculation = _ => {
@@ -29,17 +31,11 @@ const CalculationHOC = (WrappedComponent) => {
       });
     }
 
-    evaluate = _ => {
-      this.setState({
-        result: eval(this.state.calculation),
-      });
-    }
-
     render() {
       return (
         <WrappedComponent
-          appendCalculation={this.appendCalculation}
-          clearCalculation={this.clearCalculation}
+          append={this.appendCalculation}
+          clear={this.clearCalculation}
           calculation={this.state.calculation}
           result={this.state.result}
           {...this.props}
@@ -51,4 +47,4 @@ const CalculationHOC = (WrappedComponent) => {
 
 }
 
-export default CalculationHOC;
+export default CalculationContainer;
