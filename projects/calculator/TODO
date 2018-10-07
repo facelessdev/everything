@@ -6,7 +6,7 @@
 
 --------------------------------------------------------- pom
 
-3 [] components skeleton
+3 [x] components skeleton
   - App
     - calculation hoc (higher order component, this will contain the state)
     - calculation display
@@ -18,7 +18,6 @@
 
 4 [] component layout
   - research
-  - simple html/css implementation in codepen
   - implement with components
 
 --------------------------------------------------------- pom
