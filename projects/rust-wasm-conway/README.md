@@ -1,0 +1,1 @@
+https://rustwasm.github.io/book/game-of-life/hello-world.html
