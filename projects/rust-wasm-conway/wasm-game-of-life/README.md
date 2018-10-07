@@ -1,2 +1,7 @@
 # wasm-pack-template
-a template for starting a rust-wasm project to be used with wasm-pack
+
+development
+```
+make (whenever you change then rust code)
+npm start
+```
