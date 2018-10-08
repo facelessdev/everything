@@ -12,10 +12,31 @@ import "babel-polyfill";
   const fps = 1.0 / 60;
 
   const state = {
-    player: {
-      x: 5,
-      y: 5,
-      speed: 2,
+    entities: {
+      player: {
+        x: 5,
+        y: 5,
+        speed: 2,
+        render: ctx => {
+          ctx.beginPath();
+          ctx.lineWidth="6";
+          ctx.fillStyle="red";
+          ctx.fillRect(state.entities.player.x, state.entities.player.y, 10, 10); 
+          ctx.stroke();
+        }
+      },
+      monster: {
+        x: width - 20,
+        y: height - 20,
+        speed: 1.5,
+        render: ctx => {
+          ctx.beginPath();
+          ctx.lineWidth="6";
+          ctx.fillStyle="blue";
+          ctx.fillRect(state.entities.monster.x, state.entities.monster.y, 10, 10); 
+          ctx.stroke();
+        }
+      }
     }
   };
 
@@ -62,33 +83,31 @@ import "babel-polyfill";
 
   // draw method get current render state from api
   // pass through the current input being passed.
-
   const draw = () => {
     ctx.clearRect(0, 0, width, height);
 
-    ctx.beginPath();
-    ctx.fillStyle="red";
-    ctx.rect(state.player.x, state.player.y, 10, 10); 
-    ctx.stroke();
+    for (let entity in state.entities) {
+      state.entities[entity].render(ctx)
+    }
 
     requestAnimationFrame(draw);
   }
 
   const update = () => {
     if (input[key.D].state === true) {
-      state.player.x = add(state.player.x, state.player.speed);
+      state.entities.player.x = add(state.entities.player.x, state.entities.player.speed);
     }
 
     if (input[key.A].state === true) {
-      state.player.x = minus(state.player.x, state.player.speed);
+      state.entities.player.x = minus(state.entities.player.x, state.entities.player.speed);
     }
 
     if (input[key.W].state === true) {
-      state.player.y = minus(state.player.y, state.player.speed);
+      state.entities.player.y = minus(state.entities.player.y, state.entities.player.speed);
     }
 
     if (input[key.S].state === true) {
-      state.player.y = add(state.player.y, state.player.speed);
+      state.entities.player.y = add(state.entities.player.y, state.entities.player.speed);
     }
 
     setTimeout(() => requestAnimationFrame(update), fps);
