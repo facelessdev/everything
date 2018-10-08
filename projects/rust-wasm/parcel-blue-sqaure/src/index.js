@@ -59,6 +59,10 @@ import "babel-polyfill";
     }
   });
 
+
+  // draw method get current render state from api
+  // pass through the current input being passed.
+
   const draw = () => {
     ctx.clearRect(0, 0, width, height);
 
