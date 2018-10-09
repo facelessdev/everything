@@ -3,5 +3,7 @@
     "window.zoomLevel": 0,
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
     "editor.tabSize": 2,
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorStyle": "block"
 }
