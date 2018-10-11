@@ -1,0 +1,2 @@
+move:
+	cp .vimrc ~/.vimrc
