@@ -1,0 +1,1 @@
+/Users/faceless_dev/workspace/go/src/github.com/facelessdev/everything/projects/rust/ci-sandpit/target/debug/ci-sandpit.dSYM: /Users/faceless_dev/workspace/go/src/github.com/facelessdev/everything/projects/rust/ci-sandpit/src/main.rs
